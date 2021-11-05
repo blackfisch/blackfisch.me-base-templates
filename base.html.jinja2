@@ -55,21 +55,15 @@
         </a>
 
         <!-- Cookie Banner -->
-        {# <div class="nk-cookie-banner alert alert-dark text-center mb-0 {% if cookies_accepted %} hide {% endif %}" role="alert">
-    Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies. <br/>
-            <a href="https://www.cookiesandyou.com/" target="_blank">Mehr über Cookies erfahren</a><br/>
-            <a href="{{url_for('accept_cookies')}}?redirect_to={{ requestedUrl }}" class="btn btn-success btn-sm ms-3">Akzeptieren</a>
-        </div> #}
         <section class="cookie-banner {% if cookies_accepted %} hide {% endif %}">
             <div class="cookie-txt">
                 <p class="">
                     Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies.<br>
-                    <a href="https://www.cookiesandyou.com/" target="_blank">Mehr über Cookies erfahren</a><br/>
-                    you agree to our <a href="{{url_for('accept_cookies')}}?redirect_to={{ requestedUrl }}" target="_blank">Cookie Policy.</a>
+                    Genauere Informationen zu verwendeten Cookies findest Du in unserer <a href="https://blackfisch.me/cookies" target="_blank">Cookie Policy</a>.
                 </p>
             </div>
             <div>
-                <a class="btn accept">Accept</a>
+                <a class="btn accept" href="{{url_for('accept_cookies')}}?redirect_to={{ requestedUrl }}">Akzeptieren</a>
             </div>
         </section>
         <!-- End of Cookie Banner -->
