@@ -40,6 +40,10 @@
         <link href="https://static.blackfisch.me/common/css/main.css" rel="stylesheet">
         <script src='https://static.blackfisch.me/common/js/backToTop.js'></script>
 
+        <!-- Cookie Banner -->
+        {# <link href="https://static.blackfisch.me/common/css/main.css" rel="stylesheet">
+        <script src='https://static.blackfisch.me/common/js/backToTop.js'></script> #}
+
         <!-- Bootstrap -->
         <link href="https://static.blackfisch.me/bootstrap-5.0.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://static.blackfisch.me/bootstrap-icons-1.7.0/bootstrap-icons.css" rel="stylesheet">
@@ -49,6 +53,16 @@
 
 <body>
     <a href="#" id="back-to-top" class="back-to-top" aria-label="Go back to the Top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Cookie Banner -->
+    <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
+    Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies. 
+    <a href="https://www.cookiesandyou.com/" target="_blank">Mehr über Cookies erfahren</a>
+    <a href="{{url_for('accept_cookies')}}" class="btn btn-primary btn-sm ms-3"></a>
+    Ich bin einverstanden
+    </button>
+    </div>
+    <!-- End of Cookie Banner -->
 
     <header class="p-3 bg-dark text-white">
         <div class="container">
@@ -76,11 +90,11 @@
                         {# <a href="https://blackfisch.me/datenschutz" class="nav-link px-2 text-white">Datenschutzerklärung</a> #}
                     </li>
                 </ul>
-            </div>
-
-            <div class="text-end">
-                {% block headerRight %}
-                {% endblock %}
+                
+                <div class="text-end">
+                    {% block headerRight %}
+                    {% endblock %}
+                </div>
             </div>
         </div>
     </header>
