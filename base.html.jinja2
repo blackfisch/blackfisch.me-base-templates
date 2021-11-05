@@ -54,16 +54,13 @@
 <body>
     <a href="#" id="back-to-top" class="back-to-top" aria-label="Go back to the Top"><i class="bi bi-arrow-up"></i></a>
 
-    {# {% if cookies_accepted %}
-    {% else %} #}
-        <!-- Cookie Banner -->
-        <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
-        Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies. 
-        <a href="https://www.cookiesandyou.com/" target="_blank">Mehr über Cookies erfahren</a>
-        <a href="{{url_for('accept_cookies')}}?redirect_to={{ requestedUrl }}" class="btn btn-success btn-sm ms-3">Akzeptieren</a>
-        </div>
-        <!-- End of Cookie Banner -->
-    {# {% endif %} #}
+    <!-- Cookie Banner -->
+    <div class="nk-cookie-banner alert alert-dark text-center mb-0 {% if cookies_accepted %} hide {% endif %}" role="alert">
+    Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies. <br/>
+    <a href="https://www.cookiesandyou.com/" target="_blank">Mehr über Cookies erfahren</a><br/>
+    <a href="{{url_for('accept_cookies')}}?redirect_to={{ requestedUrl }}" class="btn btn-success btn-sm ms-3">Akzeptieren</a>
+    </div>
+    <!-- End of Cookie Banner -->
 
     <header class="p-3 bg-dark text-white">
         <div class="container">
