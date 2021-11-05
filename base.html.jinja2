@@ -55,15 +55,27 @@
         </a>
 
         <!-- Cookie Banner -->
-        <div class="nk-cookie-banner alert alert-dark text-center mb-0 {% if cookies_accepted %} hide {% endif %}" role="alert">
+        {# <div class="nk-cookie-banner alert alert-dark text-center mb-0 {% if cookies_accepted %} hide {% endif %}" role="alert">
     Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies. <br/>
             <a href="https://www.cookiesandyou.com/" target="_blank">Mehr über Cookies erfahren</a><br/>
             <a href="{{url_for('accept_cookies')}}?redirect_to={{ requestedUrl }}" class="btn btn-success btn-sm ms-3">Akzeptieren</a>
-        </div>
+        </div> #}
+        <section class="cookie-banner {% if cookies_accepted %} hide {% endif %}">
+            <div class="cookie-txt">
+                <p class="">
+                    Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies.<br>
+                    <a href="https://www.cookiesandyou.com/" target="_blank">Mehr über Cookies erfahren</a><br/>
+                    you agree to our <a href="{{url_for('accept_cookies')}}?redirect_to={{ requestedUrl }}" target="_blank">Cookie Policy.</a>
+                </p>
+            </div>
+            <div>
+                <a class="btn accept">Accept</a>
+            </div>
+        </section>
         <!-- End of Cookie Banner -->
 
-        <header class="p-3 bg-dark text-white">
-            {# <div class="container">
+        {# <header class="p-3 bg-dark text-white"> #}
+        {# <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 me-3 text-white text-decoration-none">
                     <img class="bi me-2" width="40" role="img" aria-label="blackfisch.me" src="https://static.blackfisch.me/common/blackfisch-2.png"/>
@@ -95,7 +107,7 @@
             </div>
         </div> #}
 
-            <nav class="navbar navbar-expand-lg justify-content-between navbar-dark bg-dark">
+        {# <nav class="navbar navbar-expand-lg justify-content-between navbar-dark bg-dark">
                 <a class="navbar-brand" href="/"><img class="bi me-2" width="40" role="img" aria-label="blackfisch.me" src="https://static.blackfisch.me/common/blackfisch-2.png"/></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,31 +131,63 @@
                         </li>
                     </ul>
                 </div>
+            </nav> #}
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://blackfisch.me">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Arma 3 Tools
+        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://sqf.blackfisch.me">SQF Converter/Formatter</a>
+                            <a class="dropdown-item" href="https://logs.blackfisch.me">RPT-Logfile Analyse</a>
+                            <a class="dropdown-item" href="https://arma.blackfisch.me">Arma Map (WIP)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
             </nav>
 
-        </header>
+            {# </header> #}
 
-        <div class="content mt-3 mb-5 mx-5">
-            {% block content %}{% endblock %}
-        </div>
+            <div class="content mt-3 mb-5 mx-5 pb-5">
+                {% block content %}{% endblock %}
+            </div>
 
-        <footer class="d-flex flex-wrap justify-content-between align-items-center border-top py-2 px-4 fixed-bottom">
-            <p class="col-md-4 mb-0 text-grey">&copy; 2021 blackfisch</p>
+            <footer class="d-flex flex-wrap justify-content-between align-items-center border-top py-2 px-4 fixed-bottom">
+                <p class="col-md-4 mb-0 text-grey">&copy; 2021 blackfisch</p>
 
-            {# <a href="/"
+                {# <a href="/"
             class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
             <img class="bi me-2" width="40" role="img" aria-label="blackfisch.me" src="https://static.blackfisch.me/common/blackfisch-2.png"/>
         </a> #}
 
-            <ul class="nav col-md-6 justify-content-end">
-                <li class="nav-item">
-                    <a href="https://blackfisch.me/datenschutz" class="nav-link px-2 text-muted">Datenschutzerklärung</a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://blackfisch.me/impressum" class="nav-link px-2 text-muted">Impressum</a>
-                </li>
-            </ul>
-        </footer>
-    </body>
+                <ul class="nav col-md-6 justify-content-end">
+                    <li class="nav-item">
+                        <a href="https://blackfisch.me/datenschutz" class="nav-link px-2 text-muted">Datenschutzerklärung</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://blackfisch.me/impressum" class="nav-link px-2 text-muted">Impressum</a>
+                    </li>
+                </ul>
+            </footer>
+        </body>
 
-</html>
+    </html>
