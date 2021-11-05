@@ -13,10 +13,11 @@ jobs:
                 repo: ['BlackFisch/blackfisch.me', 'BlackFisch/arma-log-analyzer']
 
         runs-on: ubuntu-latest
+
         steps:
-            - name: Dispatch Repos
-                uses: peter-evans/repository-dispatch@v1
-                with:
-                    token: ${{ secrets.REPO_ACCESS_TOKEN }}
-                    repository: ${{ matrix.repo }}
-                    event-type: updated-submodule
+          - name: Dispatch Repos
+            uses: peter-evans/repository-dispatch@v1
+            with:
+                token: ${{ secrets.REPO_ACCESS_TOKEN }}
+                repository: ${{ matrix.repo }}
+                event-type: updated-submodule
