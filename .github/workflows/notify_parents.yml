@@ -7,18 +7,16 @@ on:
     branches: [ main ]
 
 jobs:
-    - name: Dispatch blackfisch.me
-        uses: peter-evans/repository-dispatch@v1
-        with:
-            token: ${{ secrets.REPO_ACCESS_TOKEN }}
-            repository: Blackfisch/blackfisch.me
-            event-type: updated-submodule
-            client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+    dispatch-repos:
+        strategy:
+            matrix:
+                repo: ['BlackFisch/blackfisch.me', 'BlackFisch/arma-log-analyzer']
 
-    - name: Dispatch blackfisch.me
-        uses: peter-evans/repository-dispatch@v1
-        with:
-            token: ${{ secrets.REPO_ACCESS_TOKEN }}
-            repository: Blackfisch/arma-log-analyzer
-            event-type: updated-submodule
-            client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Dispatch Repos
+                uses: peter-evans/repository-dispatch@v1
+                with:
+                    token: ${{ secrets.REPO_ACCESS_TOKEN }}
+                    repository: ${{ matrix.repo }}
+                    event-type: updated-submodule
