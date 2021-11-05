@@ -54,7 +54,8 @@
 <body>
     <a href="#" id="back-to-top" class="back-to-top" aria-label="Go back to the Top"><i class="bi bi-arrow-up"></i></a>
 
-    {% if not cookies_accepted %}
+    {% if cookies_accepted %}
+    {% else %}}
     <!-- Cookie Banner -->
     <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
     Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies. 
