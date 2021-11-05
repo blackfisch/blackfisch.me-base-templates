@@ -55,7 +55,7 @@
         </a>
 
         <!-- Cookie Banner -->
-        <div class="nk-cookie-banner alert alert-dark text-center mb-0 {% if cookies_accepted %} hide {% endif %}" role="alert">{{cookies_accepted}}
+        <div class="nk-cookie-banner alert alert-dark text-center mb-0 {% if cookies_accepted %} hide {% endif %}" role="alert">
     Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies. <br/>
             <a href="https://www.cookiesandyou.com/" target="_blank">Mehr über Cookies erfahren</a><br/>
             <a href="{{url_for('accept_cookies')}}?redirect_to={{ requestedUrl }}" class="btn btn-success btn-sm ms-3">Akzeptieren</a>
@@ -107,10 +107,10 @@
                             <a class="nav-link" href="https://blackfisch.me">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownArma" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Arma 3 Tools
                         </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownArma">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
                                 <a class="dropdown-item" href="https://sqf.blackfisch.me">SQF Converter/Formatter</a>
                                 <a class="dropdown-item" href="https://logs.blackfisch.me">RPT-Logfile Analyse</a>
