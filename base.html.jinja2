@@ -1,18 +1,46 @@
 <!DOCTYPE html>
-<html lang="{% if lang %} {{ lang }} {% else %} de {% endif %}">
+<html lang="{% if lang %}{{ lang }}{% else %}de{% endif %}">
 
 <head>
     {% block head %}
+        <!-- Default Metadata-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Rico Goldhardt">
+        {% if desc %}<meta property="description" content="{{ desc }}">{% endif %}
+
+        <!-- Open Graph Protocol Metadata -->
+        {# <meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.png"> #}
+        <meta property="og:title" content="{{ title }} - {{ pageName }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ requestedUrl }}">
+        {% if desc %}<meta property="og:description" content="{{ desc }}">{% endif %}
+
+        <!-- Twitter Metadata -->
+        <meta name="twitter:title" content="{{ title }} - {{ pageName }}">
+        <meta name="twitter:creator" content="@black_fisch_">
+
+        <!-- Favicons -->
+        {# <link rel="shortcut icon" type="image/x-icon" href="https://static.blackfisch.me/common/favicon.ico"> #}
+        {# <link rel="shortcut icon" type="image/png" href="https://static.blackfisch.me/common/favicon.png">
+        <link rel="icon" type="image/png" href="https://static.blackfisch.me/common/favicon.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://static.blackfisch.me/common/favicon.png" sizes="96x96"> #}
+        {# <link rel="apple-touch-icon" sizes="180x180" href="https://static.blackfisch.me/common/apple-touch-icon.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="https://static.blackfisch.me/common/mstile-144x144.png"> #}
+
+        <!-- Title -->
         <title>{{ title }} - {{ pageName }}</title>
 
+        <!-- Variable Block -->
         {% block head_insert %}
         {% endblock %}
 
+        <!-- Default Style & Back-to-top Functionality -->
         <link href="https://static.blackfisch.me/common/css/main.css" rel="stylesheet">
         <script src='https://static.blackfisch.me/common/js/backToTop.js'></script>
 
+        <!-- Bootstrap -->
         <link href="https://static.blackfisch.me/bootstrap-5.0.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://static.blackfisch.me/bootstrap-icons-1.7.0/bootstrap-icons.css" rel="stylesheet">
         <script src='https://static.blackfisch.me/bootstrap-5.0.2/js/bootstrap.bundle.min.js'></script>
