@@ -55,13 +55,12 @@
     <a href="#" id="back-to-top" class="back-to-top" aria-label="Go back to the Top"><i class="bi bi-arrow-up"></i></a>
 
     {% if cookies_accepted %}
-    {% else %}}
+    {% else %}
     <!-- Cookie Banner -->
     <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
     Diese Website nutzt Cookies, um die Funktion der Website bereitstellen zu können. Wir verwenden dazu ausschließlich technisch notwendige Cookies. 
     <a href="https://www.cookiesandyou.com/" target="_blank">Mehr über Cookies erfahren</a>
     <a href="{{url_for('accept_cookies')}}?redirect_to={{ requestedUrl }}" class="btn btn-success btn-sm ms-3">Akzeptieren</a>
-    </button>
     </div>
     <!-- End of Cookie Banner -->
     {% endif %}
@@ -69,8 +68,8 @@
     <header class="p-3 bg-dark text-white">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img class="bi me-2" width="3em" height="3em" role="img" aria-label="blackfisch.me" src="https://static.blackfisch.me/common/blackfisch-2.png"/>
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 me-3 text-white text-decoration-none">
+                    <img class="bi me-2" width="40" role="img" aria-label="blackfisch.me" src="https://static.blackfisch.me/common/blackfisch-2.png"/>
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
