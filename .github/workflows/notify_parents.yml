@@ -1,0 +1,24 @@
+name: Notify Parents on Commit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+    - name: Dispatch blackfisch.me
+        uses: peter-evans/repository-dispatch@v1
+        with:
+            token: ${{ secrets.REPO_ACCESS_TOKEN }}
+            repository: Blackfisch/blackfisch.me
+            event-type: updated-submodule
+            client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+
+    - name: Dispatch blackfisch.me
+        uses: peter-evans/repository-dispatch@v1
+        with:
+            token: ${{ secrets.REPO_ACCESS_TOKEN }}
+            repository: Blackfisch/arma-log-analyzer
+            event-type: updated-submodule
+            client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
