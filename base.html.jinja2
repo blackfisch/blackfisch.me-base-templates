@@ -13,9 +13,10 @@
             <!-- Open Graph Protocol Metadata -->
             <meta property="og:image" content="https://static.blackfisch.me/common/blackfisch-2.png">
             <meta property="og:title" content="{{ title }} - {{ pageName }}">
-            <meta property="og:sitename" content="{{ pageName }}">
-            <meta property="og:type" content="website">
+            <meta property="og:site_name" content="{{ pageName }}">
+            {# <meta property="og:type" content="website"> #}
             <meta property="og:url" content="{{ requestedUrl }}">
+            <meta property="og:locale" content="de_DE">
             {% if desc %}<meta property="og:description" content="{{ desc }}">{% endif %}
 
             <!-- Twitter Metadata -->
