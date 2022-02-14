@@ -10,7 +10,7 @@ jobs:
     dispatch-repos:
         strategy:
             matrix:
-                repo: ['BlackFisch/blackfisch.me', 'BlackFisch/arma-log-analyzer']
+                repo: ['blackfisch/blackfisch.me', 'blackfisch/arma-log-analyzer', 'blackfisch/sqf.io-mirror']
 
         runs-on: ubuntu-latest
 
